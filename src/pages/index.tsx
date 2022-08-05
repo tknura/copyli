@@ -1,28 +1,31 @@
+import { NextUIProvider, Text } from '@nextui-org/react'
+import { StaticImage } from 'gatsby-plugin-image'
+import { BgImage } from 'gbimage-bridge'
 import React from "react"
 import styled from 'styled-components'
+import { BackgroundImage } from '../components/background-image/background-image'
+import { StyledCardBlur } from '../components/primitives'
 
 const Root = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #03009b;
-`
-
-const MainText = styled.h1`
-  background-color: #f09400;
-  color: #f1f1f1;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 0.5em;
 `
 
 const IndexPage = () => {
   return (
-    <Root>
-      <MainText>
-        copyli
-      </MainText>
-    </Root>
+    <NextUIProvider>
+      <BackgroundImage>
+        <Root>
+          <StyledCardBlur>
+            <Text h1 color="white">
+              copyli
+            </Text>
+          </StyledCardBlur>
+        </Root>
+      </BackgroundImage>
+    </NextUIProvider>
   )
 }
 
